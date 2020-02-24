@@ -807,7 +807,7 @@ class Chalice(_HandlerRegistration, DecoratorAPI):
         # Sometimes the event can be something that's not
         # what we specified in our request_template mapping.
         # When that happens, we want to give a better error message here.
-        if 'multiValueQueryStringParameters' not in event:
+        if 'multiValueQueryStringParameters' not in event and 'queryStringParameters' in event:
             if event['queryStringParameters'] is not None:
                 tmp = {k: [v] for k, v in event['queryStringParameters'].items()}
             else:
