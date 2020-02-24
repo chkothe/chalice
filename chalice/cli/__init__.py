@@ -409,7 +409,7 @@ def package(ctx, single_file, stage, out):
 @cli.command('generate-template')
 @click.option('--stage', default=DEFAULT_STAGE_NAME)
 @click.option('--template', default='template.yaml')
-@click.option('--handler', default='app.app')
+@click.option('--handler', default='')
 @click.option('--output-dir', default='../')
 @click.pass_context
 def generate_template(ctx, stage, template, handler, output_dir):
