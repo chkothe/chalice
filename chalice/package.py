@@ -450,5 +450,5 @@ class TemplatePostProcessor(object):
                     out_dir = os.path.abspath(os.path.join(project_dir, outdir))
                     project_dir = os.path.relpath(project_dir, out_dir)
                 resource['Properties']['CodeUri'] = project_dir
-            if handler_name:
+            if handler_name and resource['Properties']['Handler'] == 'app.app':
                 resource['Properties']['Handler'] = handler_name
